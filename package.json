@@ -24,5 +24,8 @@
   "scripts": {
     "start": "node_modules/.bin/grunt serve",
     "test": "grunt verify --force"
+  },
+  "dependencies": {
+    "karma-chrome-launcher": "^2.0.0"
   }
 }

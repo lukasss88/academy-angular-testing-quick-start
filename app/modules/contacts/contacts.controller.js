@@ -20,7 +20,6 @@
             ctrl.newContact = {};
         };
 
-
         ctrl.deleteContact = function (id)
         {
             ContactService.delete(id);

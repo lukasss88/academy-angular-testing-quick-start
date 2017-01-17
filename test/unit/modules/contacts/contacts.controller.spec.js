@@ -94,7 +94,6 @@ describe('ContactCtrl', function ()
         it('should call ContactService.get', function ()
         {
             expect(ContactServiceMock.get).toHaveBeenCalled();
-
         });
         it('should call ContactService.get with contact id', function ()
         {
