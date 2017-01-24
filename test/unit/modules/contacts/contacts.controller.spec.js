@@ -20,7 +20,6 @@ describe('ContactCtrl', function ()
             phone: '987654321'
         }];
 
-
         //callThrough() - wywołaj orginał
         ContactServiceMock = _ContactService_;
         spyOn(ContactServiceMock, 'list');
@@ -82,8 +81,8 @@ describe('ContactCtrl', function ()
         {
             expect(ContactServiceMock.delete).toHaveBeenCalledWith(1);
         });
-
     });
+
     describe('editContact', function ()
     {
         beforeEach(function ()
@@ -103,6 +102,5 @@ describe('ContactCtrl', function ()
         {
             expect(contactsCtrl.newContact).toEqual(contacts[1]);
         });
-
     });
 });

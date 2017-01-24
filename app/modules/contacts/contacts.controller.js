@@ -30,5 +30,4 @@
             ctrl.newContact = angular.copy(ContactService.get(id));
         };
     });
-
 })();

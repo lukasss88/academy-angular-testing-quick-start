@@ -14,7 +14,6 @@ describe('Messages', function ()
         messageContent = 'Hello World';
 
         messages = Messages;
-
     }));
 
     describe('getMessage', function()

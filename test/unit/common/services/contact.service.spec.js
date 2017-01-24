@@ -74,6 +74,7 @@ describe('ContactService', function ()
             expect(contactService.get(2)).toEqual({id: 2, name: 'Simon'});
         });
     });
+
     describe('delete', function ()
     {
         it('should remove contact with id equal 1', function ()
@@ -87,6 +88,7 @@ describe('ContactService', function ()
             expect(contactService.list()).toEqual([{id: 1, name: 'John'}, {id: 2, name: 'Simon'}]);
         });
     });
+
     describe('list', function ()
     {
         beforeEach(function ()
@@ -102,6 +104,5 @@ describe('ContactService', function ()
         {
             expect(contactService.list()).toEqual(expectedContacts);
         });
-
     });
 });
