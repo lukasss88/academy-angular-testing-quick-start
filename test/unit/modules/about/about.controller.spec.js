@@ -1,4 +1,4 @@
-fdescribe('AboutCtrl', function()
+describe.only('AboutCtrl', function()
 {
     'use strict';
 
@@ -13,8 +13,8 @@ fdescribe('AboutCtrl', function()
 
         MessagesMock = Messages;
 
-        spyOn(MessagesMock, 'setMessage').and.callThrough();
-        spyOn(MessagesMock, 'getMessage').and.callThrough();
+        sinon.spy(MessagesMock, 'setMessage').and.callThrough();
+        sinon.spy(MessagesMock, 'getMessage').and.callThrough();
 
         aboutCtrl = $controller('AboutCtrl', {Messages: MessagesMock});
     }));
