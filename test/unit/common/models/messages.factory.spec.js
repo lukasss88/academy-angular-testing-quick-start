@@ -25,7 +25,7 @@ describe('Messages', function ()
 
         it('should return message', function ()
         {
-            expect(messages.getMessage()).toEqual(expectedMessage);
+            expect(messages.getMessage()).to.eql(expectedMessage);
         });
     });
 
@@ -38,7 +38,7 @@ describe('Messages', function ()
         it('should set message to jol', function ()
         {
 
-                expect(messages.getMessage()).toEqual('jol');
+                expect(messages.getMessage()).to.eql('jol');
 
         });
     })

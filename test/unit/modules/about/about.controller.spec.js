@@ -1,4 +1,4 @@
-describe.only('AboutCtrl', function()
+describe('AboutCtrl', function()
 {
     'use strict';
 
@@ -13,8 +13,8 @@ describe.only('AboutCtrl', function()
 
         MessagesMock = Messages;
 
-        sinon.spy(MessagesMock, 'setMessage').and.callThrough();
-        sinon.spy(MessagesMock, 'getMessage').and.callThrough();
+        sinon.spy(MessagesMock, 'setMessage');
+        sinon.spy(MessagesMock, 'getMessage');
 
         aboutCtrl = $controller('AboutCtrl', {Messages: MessagesMock});
     }));
@@ -23,15 +23,15 @@ describe.only('AboutCtrl', function()
     {
         it('should set about title', function ()
         {
-            expect(aboutCtrl.title).toEqual('About Page');
+            expect(aboutCtrl.title).to.eql('About Page');
         });
         it('should set about body', function ()
         {
-            expect(aboutCtrl.body).toEqual('This is the about page body');
+            expect(aboutCtrl.body).to.eql('This is the about page body');
         });
         it('should set about newMessage', function ()
         {
-            expect(aboutCtrl.newMessage).toEqual('');
+            expect(aboutCtrl.newMessage).to.eql('');
         });
     });
 
@@ -43,15 +43,15 @@ describe.only('AboutCtrl', function()
         });
         it('should call Messages.setMessage', function ()
         {
-            expect(MessagesMock.setMessage).toHaveBeenCalled();
+            expect(MessagesMock.setMessage).to.have.been.called;
         });
         it('should call Messages.setMessage with Hello Message', function ()
         {
-            expect(MessagesMock.setMessage).toHaveBeenCalledWith('Hello');
+            expect(MessagesMock.setMessage).to.have.been.calledWith('Hello');
         });
         it('should set NewMessage', function ()
         {
-            expect(aboutCtrl.newMessage).toEqual('Hello');
+            expect(aboutCtrl.newMessage).to.eql('Hello');
         });
     });
 });

@@ -43,7 +43,7 @@ describe('ContactService', function ()
             });
             it('should add new contact', function ()
             {
-                expect(contactService.list()).toEqual(expectedContacts);
+                expect(contactService.list()).to.eql(expectedContacts);
             });
         });
         describe('when contact id exists in contacts', function ()
@@ -61,7 +61,7 @@ describe('ContactService', function ()
 
             it('should update indicated contact', function ()
             {
-                expect(contactService.list()).toEqual(expectedContacts);
+                expect(contactService.list()).to.eql(expectedContacts);
             });
         });
     });
@@ -70,8 +70,8 @@ describe('ContactService', function ()
     {
         it('should return contact with the given id', function ()
         {
-            expect(contactService.get(3)).toEqual({id: 3, name: 'Frances'});
-            expect(contactService.get(2)).toEqual({id: 2, name: 'Simon'});
+            expect(contactService.get(3)).to.eql({id: 3, name: 'Frances'});
+            expect(contactService.get(2)).to.eql({id: 2, name: 'Simon'});
         });
     });
 
@@ -80,12 +80,12 @@ describe('ContactService', function ()
         it('should remove contact with id equal 1', function ()
         {
             contactService.delete(1);
-            expect(contactService.list()).toEqual([{id: 2, name: 'Simon'}, {id: 3, name: 'Frances'}]);
+            expect(contactService.list()).to.eql([{id: 2, name: 'Simon'}, {id: 3, name: 'Frances'}]);
         });
         it('should remove contact with id equal 3', function ()
         {
             contactService.delete(3);
-            expect(contactService.list()).toEqual([{id: 1, name: 'John'}, {id: 2, name: 'Simon'}]);
+            expect(contactService.list()).to.eql([{id: 1, name: 'John'}, {id: 2, name: 'Simon'}]);
         });
     });
 
@@ -102,7 +102,7 @@ describe('ContactService', function ()
 
         it('should return contacts list', function ()
         {
-            expect(contactService.list()).toEqual(expectedContacts);
+            expect(contactService.list()).to.eql(expectedContacts);
         });
     });
 });

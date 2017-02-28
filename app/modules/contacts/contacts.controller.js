@@ -7,8 +7,8 @@
         var ctrl = this;
 
         ctrl.newContact = {
-            name: 'John',
             email: 'john@john.pl',
+            name: 'John',
             phone: '123456789'
         };
 
