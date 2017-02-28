@@ -14,5 +14,6 @@
             Messages.setMessage(m);
             about.newMessage = Messages.getMessage();
         };
+
     });
 })();

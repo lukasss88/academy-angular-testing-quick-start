@@ -1,4 +1,4 @@
-describe.only('ContactCtrl', function ()
+describe('ContactCtrl', function ()
 {
     'use strict';
 
@@ -6,29 +6,25 @@ describe.only('ContactCtrl', function ()
     var ContactServiceMock;
     var contacts;
 
+    contacts = [{
+        name: 'John',
+        email: 'john@john.pl',
+        phone: '123456789'
+    }, {
+        name: 'Jack',
+        email: 'jack@jack.pl',
+        phone: '987654321'
+    }];
     beforeEach(module('app'));
 
     beforeEach(inject(function ($controller, _ContactService_)
     {
-        contacts = [{
-            name: 'John',
-            email: 'john@john.pl',
-            phone: '123456789'
-        }, {
-            name: 'Jack',
-            email: 'jack@jack.pl',
-            phone: '987654321'
-        }];
-
-        //callThrough() - wywołaj orginał
         ContactServiceMock = _ContactService_;
         sinon.spy(ContactServiceMock, 'list');
         sinon.spy(ContactServiceMock, 'save');
         sinon.spy(ContactServiceMock, 'delete');
         sinon.stub(ContactServiceMock, 'get').returns(contacts[1]);
-
         contactsCtrl = $controller('ContactController', {ContactService: ContactServiceMock});
-
     }));
 
     describe('initialization', function ()
@@ -81,8 +77,8 @@ describe.only('ContactCtrl', function ()
         {
             expect(ContactServiceMock.delete).to.have.been.calledWith(1);
         });
-    });
 
+    });
     describe('editContact', function ()
     {
         beforeEach(function ()
@@ -102,5 +98,6 @@ describe.only('ContactCtrl', function ()
         {
             expect(contactsCtrl.newContact).to.eql(contacts[1]);
         });
+
     });
 });
